@@ -1,0 +1,114 @@
+
+    <!-- Hero Section -->
+    <section class="hero gridforimg">
+        <div class="hero-content titilename" >
+            <h1>Welcome To Vivek TRansport</h1>
+            <p>Here We Go </p>
+            <a href="#projects" class="btn">View My Work</a>
+
+            <!--  skills id use for when click book now btn open this section-->
+            <a href="#skills" class="btn">BooK NoW</a>
+        </div>
+        <div class="imgfortop">
+           
+        </div>
+            </section>
+    <img src="1.png" alt="" width="100%" height="30%" style="box-shadow: 0 0 10px red;">
+
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h1>
+            Vivek TRansport - Best Transport and Logistics company <br>3
+            Office - Star Recedency Malinagar,Akluj (413108),Maharashtra
+        </h1>
+        <h2>About Our company</h2>
+        <p>A transport company is a business that moves people or goods from one location to another. They can provide
+            services to individuals, other companies, or global trade partners. Transport companies can specialize in a
+            variety of activities, including: Rideshare services, Hauling consumer goods, International shipping,
+            Freight forwarding, and Air express services.
+            Transport companies can be categorized by the type of customer base they serve or the type of service they
+            provide. Some of the top transport companies in India include:</p>
+
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Type Of Trucks </h2>
+
+    </section>
+    <div class="booknow">
+        <h1>BooK NoW</h1>
+    </div>
+    <div class="skill-list">
+
+        <div class="skill-item">Small Truck 1 - 2 Tons Load</div>
+        <div class="skill-item">Small Truck 2 - 5 Tons Load</div>
+        <div class="skill-item">Medium Truck 4 - 7 Tons Load</div>
+        <div class="skill-item">Medium Truck 5 - 9 Tons Load</div>
+        <div class="skill-item">Big Truck 10 - 17 Tons Load</div>
+        <div class="skill-item">Big Truck 15 - 22 Tons Load</div>
+        <div class="skill-item"> Containers </div>
+    </div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+
+        <div class="project-card">
+           
+            <img src="IMG_20250127_235718_971.webp" alt="" width="30%" style="box-shadow: 0 0  5px black;">
+            <h3> - Mr. VIVEK TAWARE</h3>
+            <p>We have not only built a company, we also developed a culture among our staff, right from truck drivers
+                to the top management. A sense of responsibility, honesty and dedication is inculcated in each of our
+                te  am member. This is what makes quality & on-time service possible. VRL has given employment to over
+                20,000 + employees and our growth & success is attributed to this strong workforce. This coupled with
+                the strong in-house IT would propel the Company to newer growth pinnacles in the days to come.</p>
+            <!-- <a href="https://github.com/yourusername/ecommerce-app" target="_blank" class="btn">View Project</a> -->
+        </div>
+
+        <!-- <h2>Our Mission</h2> -->
+        <div class="project-card logo" >
+            <img src="black logo.png" alt="" width="25%" >
+            <img src="purple logo.png" alt="" width="25%" >
+            <p> To provide the highest quality service to our customers by continuously increasing cost efficiency and
+                maintaining delivery deadlines. To encourage our workforce to continuously strive for quality and
+                excellence in everything they do. To promote team work and create work environment that encourages
+                talent and brings out the best in our employees. </p>
+            <!-- <a href="https://github.com/yourusername/portfolio" target="_blank" class="btn">View Project</a> -->
+        </div>
+      
+        <!-- Add more projects as necessary -->
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+        <script src="script.js">
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Handle Contact Form (Optional - For Form Submissions)
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert("Your message has been sent!");
+            // You could add AJAX here to send the form data without reloading the page.
+        });
+
+    </script>

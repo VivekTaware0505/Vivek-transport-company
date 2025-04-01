@@ -1,0 +1,41 @@
+/* Footer */
+footer {
+    background-color: #e2b100;
+  
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    text-align: center;
+}
+
+footer .social-links a {
+    color: #000000;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    
+}
+
+/* footer .social-links a:hover {
+    color: #00e5ff;
+} */
+.stlist{
+
+display: flex;
+justify-content: center;
+gap: 100px ;
+align-items: center;
+
+
+
+}
+.stlist ul{
+list-style: none;
+margin-top: 50px;
+color: rgb(8, 8, 0);
+
+}
+.stlist ul li{
+margin-top: 10px;
+font-size: 15px;
+text-decoration: underline rgb(0, 0, 0);
+}
