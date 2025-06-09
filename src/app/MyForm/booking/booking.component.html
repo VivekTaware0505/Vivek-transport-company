@@ -1,0 +1,23 @@
+ <form id="bookingForm" class="form-container"  (ngSubmit)="formsubmit(refdata)" #refdata="ngForm">
+            <label for="customerName">Full Name:</label>
+            <input type="text" id="customerName" name="customerName" required placeholder="Enter your full name" ngModel>
+    
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email" ngModel>
+    
+            <label for="date">Booking Date:</label>
+            <input type="date" id="date" name="date" required ngModel>
+    
+            <label for="service">Select Service:</label>
+            <select id="service" name="selectservice" required ngModel>
+                <option value="">Choose a service</option>
+                <option value="consulting">Consulting</option>
+                <option value="development">Development</option>
+                <option value="design">Design</option>
+            </select>
+    
+            <label for="message">Additional Notes:</label>
+            <textarea id="message" name="additionalnotes" placeholder="Any special requests?" rows="4" ngModel></textarea>
+    
+            <button type="submit" id="submitBtn">Submit Booking</button>
+</form>
