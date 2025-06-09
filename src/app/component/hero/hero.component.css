@@ -187,3 +187,63 @@ section h2 {
 }
 
 
+
+        /* styles.css for add truck or book now area  */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+     
+        
+        header {
+            background-color: #ffbb00;
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            text-align: center;
+        }
+        
+        form {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        button {
+            background-color: #ffcc00;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        
+        
+        @media (max-width: 768px) {
+            form {
+                padding: 15px;
+            }
+        
+            input, select, textarea, button {
+                font-size: 14px;
+            }
+        }

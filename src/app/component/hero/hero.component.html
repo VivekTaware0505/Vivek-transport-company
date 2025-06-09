@@ -34,25 +34,84 @@
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
-        <h2>Type Of Trucks </h2>
+        <h2>Type Of Trucks</h2>
 
     </section>
-    <div class="booknow">
-        <h1>BooK NoW</h1>
-    </div>
-    <div class="skill-list">
-
-        <div class="skill-item">Small Truck 1 - 2 Tons Load</div>
-        <div class="skill-item">Small Truck 2 - 5 Tons Load</div>
-        <div class="skill-item">Medium Truck 4 - 7 Tons Load</div>
-        <div class="skill-item">Medium Truck 5 - 9 Tons Load</div>
-        <div class="skill-item">Big Truck 10 - 17 Tons Load</div>
-        <div class="skill-item">Big Truck 15 - 22 Tons Load</div>
-        <div class="skill-item"> Containers </div>
+    <div>
+        <header>
+            <h1>Book NoW</h1>
+        </header>
+    <main>
+        <form id="bookingForm" class="form-container">
+            <label for="customerName">Full Name:</label>
+            <input type="text" id="customerName" name="customerName" required placeholder="Enter your full name">
+    
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+    
+            <label for="date">Booking Date:</label>
+            <input type="date" id="date" name="date" required>
+    
+            <label for="service">Select Service:</label>
+            <select id="service" name="service" required>
+                <option value="">Choose a service</option>
+                <option value="consulting">Consulting</option>
+                <option value="development">Development</option>
+                <option value="design">Design</option>
+            </select>
+    
+            <label for="message">Additional Notes:</label>
+            <textarea id="message" name="message" placeholder="Any special requests?" rows="4"></textarea>
+    
+            <button type="submit" id="submitBtn">Submit Booking</button>
+        </form>
+        
+        <div id="confirmationMessage" class="hidden">
+            <h2>Thank you for your booking!</h2>
+            <p>Your booking details have been received, and we'll get in touch soon.</p>
+        </div>
+    </main>
     </div>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+
+    <header>
+        <h1>ADD YOUR TRUCK FOR GETING RIDE</h1>
+    </header>
+    
+    <main id="projects">
+        <form id="bookingForm" class="form-container">
+            <label for="customerName">Full Name:</label>
+            <input type="text" id="customerName" name="customerName" required placeholder="Enter your full name">
+    
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+    
+            <label for="text">Your Truck No:</label>
+            <input type="text" id="date" name="text" required>
+    
+            <label for="service">Select District:</label>
+            <select id="service" name="service" required>
+                <option value="">select</option>
+                <option value="pune">pune</option>
+                <option value="Solapur">Solapur</option>
+                <option value="Kolhapur">Kolhapur</option>
+            </select>
+    
+            <label for="message">Additional Notes:</label>
+            <textarea id="message" name="message" placeholder="Any special requests?" rows="4"></textarea>
+    
+            <button type="submit" id="submitBtn" > Submit</button>
+        </form>
+        
+        <div id="confirmationMessage" class="hidden">
+            <h2>Thank you for your booking!</h2>
+            <p>Your booking details have been received, and we'll get in touch soon.</p>
+        </div>
+    </main>
+    
+
+    <section id="" class="projects">
 
         <div class="project-card">
            
@@ -79,6 +138,39 @@
       
         <!-- Add more projects as necessary -->
     </section>
+
+    
+<script src="script.js">
+
+    // script.js java script for booking button and aad your truck
+document.getElementById("bookingForm").addEventListener("submit", function(event) {
+event.preventDefault();  // Prevent the form from submitting
+
+const name = document.getElementById("customerName").value.trim();
+const email = document.getElementById("email").value.trim();
+const date = document.getElementById("date").value.trim();
+const service = document.getElementById("service").value;
+
+if (!name || !email || !date || !service) {
+    alert("Please fill in all required fields.");
+    return;
+}
+
+// Assuming successful form validation, display a confirmation message
+document.getElementById("bookingForm").reset();  // Clear form inputs
+document.getElementById("confirmationMessage").classList.remove("hidden");
+setTimeout(() => {
+    document.getElementById("confirmationMessage").classList.add("hidden");
+}, 5000);  // Hide confirmation message after 5 seconds
+});
+
+
+</script>
+
+
+
+
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
