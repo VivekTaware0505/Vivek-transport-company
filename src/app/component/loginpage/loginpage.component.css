@@ -1,0 +1,139 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* background: linear-gradient(135deg, #004e92, #000428); */
+      padding: 20px;
+    }
+
+    /* ===== Card ===== */
+    .login-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      padding: 2rem;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      color: #fff;
+      text-align: center;
+      animation: fadeIn 0.9s ease-in-out;
+    }
+
+    .login-container h2 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: #00d4ff;
+    }
+
+    /* ===== Inputs ===== */
+    .form-group {
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      color: #cdeeff;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+
+    .form-group input:focus {
+      border: 1px solid #00d4ff;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    /* ===== Button ===== */
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #00d4ff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #000428;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #00a2cc;
+    }
+
+    /* ===== Links ===== */
+    .options {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .options a {
+      color: #00d4ff;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    .options a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== Social Login ===== */
+    .social-login {
+      margin-top: 1.5rem;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .google { background: #fff; color: #000; }
+    .facebook { background: #1877f2; color: #fff; }
+
+    .google:hover { background: #eee; }
+    .facebook:hover { background: #145dbd; }
+
+    /* ===== Animation ===== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 1.5rem;
+      }
+      .login-container h2 {
+        font-size: 1.5rem;
+      }
+    }

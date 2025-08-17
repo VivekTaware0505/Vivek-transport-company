@@ -1,0 +1,130 @@
+
+   
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">🚚  VivekTransportt Admin</div>
+    <nav class="nav">
+      <a href="#" class="active">📊 Dashboard</a>
+      <a href="#">🚛 Fleet</a>
+      <a href="#">🧑‍✈️ Drivers</a>
+      <a href="#">🗺️ Routes</a>
+      <a href="#">📦 Bookings</a>
+      <a href="#">📑 Reports</a>
+      <a href="#">⚙️ Settings</a>
+    </nav>
+  </aside>
+
+  <!-- Header -->
+  <header class="header">
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <h2>Dashboard Overview</h2>
+    <div class="right">
+      <span>Admin</span>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <section class="kpis">
+      <div class="card kpi">
+        <div class="label">Total Trips</div>
+        <div class="value" id="trips">0</div>
+      </div>
+      <div class="card kpi">
+        <div class="label">Active Vehicles</div>
+        <div class="value" id="vehicles">0</div>
+      </div>
+      <div class="card kpi">
+        <div class="label">Drivers</div>
+        <div class="value" id="drivers">0</div>
+      </div>
+      <div class="card kpi">
+        <div class="label">Revenue</div>
+        <div class="value" id="revenue">$0</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Recent Bookings</h3>
+      <table id="bookings">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Route</th>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="chart-container">
+      <h3>Trips Trend</h3>
+      <canvas id="tripsChart"></canvas>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Sidebar toggle for mobile
+    const sidebar = document.getElementById('sidebar');
+    const menuToggle = document.getElementById('menuToggle');
+    menuToggle?.addEventListener('click', ()=> sidebar.classList.toggle('open'));
+
+    // Fake Data with animation
+    function animateValue(id, start, end, duration) {
+      const obj = document.getElementById(id);
+      let startTime = null;
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        obj.textContent = Math.floor(progress * (end - start) + start);
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    animateValue('trips', 0, 1280, 1500);
+    animateValue('vehicles', 0, 54, 1500);
+    animateValue('drivers', 0, 112, 1500);
+    document.getElementById('revenue').textContent = "$145,000";
+
+    const bookings = [
+      {id:101, customer:"Aarav", route:"Delhi - Mumbai", date:"2025-08-12", status:"Completed"},
+      {id:102, customer:"Diya", route:"Pune - Bangalore", date:"2025-08-14", status:"Pending"},
+      {id:103, customer:"Kabir", route:"Chennai - Hyderabad", date:"2025-08-15", status:"Cancelled"},
+    ];
+    const tbody = document.querySelector('#bookings tbody');
+    bookings.forEach(b=>{
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${b.id}</td><td>${b.customer}</td><td>${b.route}</td><td>${b.date}</td><td><span class="status ${b.status}">${b.status}</span></td>`;
+      tbody.appendChild(tr);
+    });
+
+    // Chart.js Trips Trend
+    const ctx = document.getElementById('tripsChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+        datasets: [{
+          label: 'Trips',
+          data: [800, 950, 1000, 1100, 1150, 1200, 1250, 1280],
+          borderColor: '#0284c7',
+          backgroundColor: 'rgba(2,132,199,0.2)',
+          tension: 0.3,
+          fill: true,
+        }] 
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: true, position: 'bottom' } },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+

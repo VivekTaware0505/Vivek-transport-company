@@ -1,0 +1,148 @@
+ :root {
+      --bg: #f2f6fa;
+      --sidebar: #1e293b;
+      --panel: #ffffff;
+      --panel-2: #f9fbfd;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #0284c7;
+      --brand-2: #38bdf8;
+      --accent: #22c55e;
+      --danger: #ef4444;
+      --warn: #f59e0b;
+      --ok: #10b981;
+      --border: #e2e8f0;
+      --radius: 16px;
+      --shadow: 0 6px 24px rgba(0,0,0,.1);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      grid-template-rows: 70px 1fr;
+      grid-template-areas:
+        "sidebar header"
+        "sidebar main";
+      gap: 16px;
+      padding: 16px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      grid-area: sidebar;
+      background: linear-gradient(180deg, var(--sidebar), #0f172a);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 20px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .brand { font-size: 22px; font-weight: 700; text-align:center; margin-bottom:10px; }
+    .nav { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+    }
+    .nav a:hover, .nav a.active {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: var(--shadow);
+    }
+
+    /* Header */
+    .header {
+      grid-area: header;
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+    }
+    .menu-toggle { display: none; background:none; border:none; font-size:22px; }
+    .header .right { display: flex; align-items: center; gap: 14px; }
+
+    /* Main */
+    main {
+      grid-area: main;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+    }
+    .card {
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px;
+      animation: fadeIn .5s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity:0; transform: translateY(10px);} to {opacity:1; transform: translateY(0);}
+    }
+
+    .kpis { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+    .kpi {
+      text-align: center;
+      background: var(--panel-2);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: transform .2s;
+    }
+    .kpi:hover { transform: translateY(-4px); }
+    .kpi .label { color: var(--muted); font-size: 13px; margin-bottom: 6px; }
+    .kpi .value { font-size: 26px; font-weight: 700; color: var(--brand); }
+
+    /* Table */
+    table { width: 100%; border-collapse: collapse; font-size:14px; }
+    th, td { padding: 12px; border-bottom: 1px solid var(--border); text-align:left; }
+    th { text-transform: uppercase; font-size: 12px; color: var(--muted); }
+    tr:hover { background: var(--panel-2); }
+    .status {
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .status.Completed { background: var(--ok); color: #fff; }
+    .status.Pending { background: var(--warn); color: #fff; }
+    .status.Cancelled { background: var(--danger); color: #fff; }
+
+    /* Chart */
+    .chart-container {
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+    canvas {
+      width: 100% !important;
+      height: 300px !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      main { grid-template-columns: 1fr; }
+      .kpis { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      body { grid-template-columns: 1fr; grid-template-areas: "header" "main"; padding: 8px; }
+      .sidebar { position: fixed; left: -270px; top: 0; bottom: 0; width: 240px; transition: left .3s; z-index:1000; }
+      .sidebar.open { left: 0; }
+      .menu-toggle { display: inline-block; }
+      .header h2 { font-size: 18px; }
+      .kpis { grid-template-columns: 1fr; }
+    }
+  
