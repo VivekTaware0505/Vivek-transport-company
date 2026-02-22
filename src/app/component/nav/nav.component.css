@@ -68,7 +68,7 @@ header ul li a {
 .headline {
     text-align: center;
     /* background-color: rgb(216, 13, 13); */
-    background-image: linear-gradient(100deg, rgb(244, 252, 4) 20%, rgb(197, 255, 6) 80%);
+    background-image: linear-gradient(100deg, rgb(249, 249, 245) 20%, rgb(155, 255, 6) 80%);
     color: black;
     
     margin-bottom: 2%;

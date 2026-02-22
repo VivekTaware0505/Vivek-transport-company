@@ -9,5 +9,8 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './nav.component.css'
 })
 export class NavComponent {
+  hallo = "vivek transport"
+
+  
 
 }
